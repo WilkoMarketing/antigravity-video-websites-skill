@@ -25,6 +25,8 @@ If the user doesn't specify these, ask briefly or use sensible creative defaults
 ## Premium Checklist (Non-Negotiable)
 
 - [ ] **Lenis smooth scroll** — native scroll feels "web page," Lenis feels "experience"
+- [ ] **Navbar scroll-to-pill transform** — Navbar starts full-width, then shrinks to a centered pill shape (glassmorphism) on scroll.
+- [ ] **Magnetic Snap-Stop** — Scroll briefly pauses/snaps when a text card appears to create a "boom, boom, boom" rhythmic reading effect.
 - [ ] **4+ animation types** — never repeat the same entrance animation consecutively
 - [ ] **Staggered reveals** — label → heading → body → CTA, never all at once
 - [ ] **No glassmorphism cards** — text on clean backgrounds, hierarchy via font size/weight/color
@@ -40,6 +42,19 @@ If the user doesn't specify these, ask briefly or use sensible creative defaults
 - [ ] **Frame speed 1.8-2.2** — product animation completes by ~55% scroll. Below 1.8 feels sluggish
 
 ## Workflow
+
+### Step 0: The Interview (MANDATORY)
+
+Before building anything or extracting frames, ask the user these questions to gather the design system requirements. Do not skip this step unless the user explicitly provided all this information already (e.g. from a prompt).
+
+1. **Brand name** — "What's the brand or product name for this site?"
+2. **Logo** — "Do you have a logo file I can use? (SVG or PNG preferred)"
+3. **Accent color** — "What's your primary accent color? (hex code, or describe it and I'll suggest options)"
+4. **Background color** — "What background color do you want? (e.g., dark, light, specific hex)"
+5. **Overall vibe** — "What's the overall feel you're going for? (e.g., premium tech launch, luxury, playful, minimal, bold)"
+6. **Content Source** — "Do you have a website URL I should pull content from, or will you paste the copy directly?"
+
+Once you have this information, you can proceed to frame extraction and building the tailored experience.
 
 ### Step 1: Analyze the Video & Extract Frames
 
@@ -219,7 +234,22 @@ ScrollTrigger.create({
 });
 ```
 
-#### 5e. Section Animation System
+#### 5e. Navbar Pill & Snap-Stop Mechanics
+
+**Navbar Scroll-to-Pill:**
+Use GSAP to animate the `nav` element from full-width to a centered pill shape with glassmorphism as the user scrolls:
+```javascript
+gsap.to(".site-header nav", {
+  maxWidth: "800px", borderRadius: "50px", marginTop: "20px", padding: "10px 30px",
+  backgroundColor: "rgba(255, 255, 255, 0.05)", backdropFilter: "blur(15px)", border: "1px solid rgba(255,255,255,0.1)",
+  scrollTrigger: { trigger: 'body', start: "100px top", end: "300px top", scrub: true }
+});
+```
+
+**Snap-Stop Scroll:**
+To create rhythm, use ScrollTrigger's `snap` property across sections to momentarily hold the user's scroll position when a card appears.
+
+#### 5f. Section Animation System
 
 Each section reads `data-animation` and gets a different entrance. Sections with `data-persist="true"` stay visible once animated in. Position sections absolutely at the midpoint of their enter/leave range with `translateY(-50%)`.
 
@@ -264,7 +294,7 @@ function setupSectionAnimation(section) {
 }
 ```
 
-#### 5f. Horizontal Text Marquee
+#### 5g. Horizontal Text Marquee
 
 ```javascript
 document.querySelectorAll(".marquee-wrap").forEach(el => {

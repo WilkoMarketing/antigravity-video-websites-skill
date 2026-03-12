@@ -11,8 +11,10 @@ This skill equips your local Antigravity agent with the knowledge, rendering log
 By adding this skill, your Google Antigravity agent becomes an expert in:
 - **🎥 WebP Frame Extraction**: Slices any `.mp4`, `.mov`, etc. video into optimized `.WebP` frames automatically via an embedded Python script.
 - **✨ AI Background Removal (`rembg`)**: Identifies the subject of your video and erases solid backgrounds or "fake transparency grids", delivering clean, alpha-channel assets ready for dark-mode web composites. (Use the `--remove-bg` flag during prompt!).
+- **🎯 Mandatory "Interview" Phase**: The agent will actively pause and ask the user for brand guidelines, hex colors, and content sources *before* touching a single line of code, ensuring a truly tailored result.
 - **📜 Lenis Smooth Scroll**: Instantly scaffolds a native-feel, ultra-smooth scrolling experience.
 - **🪄 GSAP Choreography**: Animates up to 6 different content sections using a variety of animations (`stagger-up`, `slide-left`, `scale-up`, `clip-reveal`, and more) driven by user scroll depth, ensuring no redundant motion.
+- **✨ UI Polish (Pill Navs & Snap-Stops)**: Employs Apple-level interaction design like full-width Navbars that morph into frosted-glass "pills" on scroll, and magnetic "Snap-Stop" scroll triggers that rhythmically pause the user exactly when text appears.
 - **🎨 Premium Visual Formatting**: Implements strict design system rules like 12rem massive typography, side-aligned layouts, horizontal scrolling marquees, and dynamic overlay fading based on scroll mapping.
 
 ## 🚀 How to Install in Google Antigravity
