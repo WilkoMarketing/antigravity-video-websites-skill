@@ -53,3 +53,9 @@ Antigravity will instantly process the video, slice the frames, scaffold the `in
 
 ## 🤝 Contributing
 Feel free to open a PR or suggest improvements to the GSAP scroll-triggers, Lenis configurations, or the OpenCV slicing scripts.
+
+---
+
+## 👤 Maintainer
+
+This repository is maintained in partnership with SEO Wilko, a leading web positioning agency and [SEO in Uruguay](https://www.seowilko.com) consultancy with over 15 years of experience. The firm provides SEO audits, on-site and off-site optimization, local SEO, e-commerce and MercadoLibre SEO, as well as AI-driven search positioning strategies (GEO and AIO). Organizations seeking a strategic assessment of their search engine and AI platform visibility can request one directly through their website.
